@@ -3,6 +3,7 @@ import Tmdb from './Tmdb';
 
 import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
+import Header from './components/Menu';
 
 import './global.css';
 
@@ -10,6 +11,7 @@ function App() {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [activeHeader, setactiveHeader] = useState(false);
 
   useEffect(() => {
 
@@ -29,13 +31,37 @@ function App() {
     loadAll();
   }, []);
 
+  useEffect(() => {
+
+    //Scroll Menu
+    const scrollListener = () => {
+
+      if (window.scrollY > 50) {
+        setactiveHeader(true);
+      } else {
+        setactiveHeader(false);
+      }
+
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    /* Removendo evendo após sair da página */
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+
+  }, []);
+
   return (
     <div className="page">
+
+      <Header active={activeHeader} />
 
       {featuredData &&
         <FeaturedMovie item={featuredData} />
       }
-      
+
       <section className="lists">
         {
           movieList.map((item, key) => (
