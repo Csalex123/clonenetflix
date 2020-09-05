@@ -61,3 +61,13 @@
     opacity: 1;
 }
 
+@media (max-width: 760px) {
+    .movieRow--right, .movieRow--left{
+        opacity: 1;
+    }
+
+    .featured--description{
+        max-width: 100%;
+    }
+}
+
