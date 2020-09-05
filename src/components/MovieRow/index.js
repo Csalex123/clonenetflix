@@ -18,7 +18,7 @@ export default function ({ title, items }) {
 
     const handleRightArrow = () => {
         let x = scrollX - Math.round(window.innerWidth / 2);
-        let listW = items.results.length * 150;
+        let listW = items.results.length * 250;
         if (window.innerWidth - listW > x) {
             x = (window.innerWidth - listW) - 60;
         }
@@ -42,7 +42,7 @@ export default function ({ title, items }) {
             <div className="movieRow--listarea">
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
-                    width: '99999px'
+                    width: items.results.length * 250
                 }}>
                     {items.results.length > 0 && items.results.map((item, key) => (
                         <div key={key} className="movieRow--item">
