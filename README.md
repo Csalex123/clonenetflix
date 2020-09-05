@@ -16,5 +16,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Quer ver o resultado final? [veja clicando aqui](http://alexricardo.dev.br/)  .
+Quer ver o resultado final? [veja clicando aqui](https://clonenetflix.vercel.app/)  .
 
